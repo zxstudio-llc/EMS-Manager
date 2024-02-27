@@ -20,6 +20,13 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 });
 
+// Manejar eventos de conexión de MongoDB
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "Error de conexión a MongoDB:"));
+db.once("open", () => {
+  console.log("Conectado a MongoDB");
+});
+
 // Configuración de Express
 app.use(cors());
 app.use(morgan("dev"));
