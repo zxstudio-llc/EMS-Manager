@@ -8,6 +8,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const authRoutes = require("./auth/routes/authRoutes");
 const authMiddleware = require("./auth/middleware/authMiddleware");
+const clientRoutes = require("./clients/routes/clientRoutes");
 
 dotenv.config();
 
