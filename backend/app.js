@@ -9,6 +9,7 @@ const dotenv = require("dotenv");
 const authRoutes = require("./auth/routes/authRoutes");
 const authMiddleware = require("./auth/middleware/authMiddleware");
 const clientRoutes = require("./clients/routes/clientRoutes");
+const contractRoutes = require("./contracts/routes/contractRoutes");
 
 dotenv.config();
 
@@ -37,6 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 // Configuración de rutas
 app.use("/auth", authRoutes);
 app.use("/clients", clientRoutes);
+app.use("/contracts", contractRoutes);
 
 // Middleware de autorización
 app.use("/api", authMiddleware);
