@@ -35,6 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Configuración de rutas
 app.use("/auth", authRoutes);
+app.use("/clients", clientRoutes);
 
 // Middleware de autorización
 app.use("/api", authMiddleware);
