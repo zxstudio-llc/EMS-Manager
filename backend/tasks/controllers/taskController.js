@@ -6,8 +6,7 @@ const Task = require("../models/task");
 // Funciones de controlador para tareas
 exports.getAllTasks = async (req, res) => {
   try {
-      const tasks = await Task.find();
-      console.log("Todas las tareas:", tasks);
+    const tasks = await Task.find();
     res.status(200).json({ tasks });
   } catch (error) {
     console.error(error);
@@ -20,8 +19,7 @@ exports.getTaskById = async (req, res) => {
     const { id } = req.params;
     const task = await Task.findById(id);
 
-      if (!task) {
-        console.log("Tarea no encontrada para ID:", id);
+    if (!task) {
       return res.status(404).json({ error: "Tarea no encontrada" });
     }
 
@@ -36,14 +34,11 @@ exports.createTask = async (req, res) => {
   try {
     const { title, description, status, assignedTo } = req.body;
 
-    // Realiza las validaciones necesarias
-
     const newTask = new Task({
       title,
       description,
       status,
       assignedTo,
-      // ... Otros campos de la tarea
     });
 
     await newTask.save();
@@ -95,7 +90,7 @@ exports.deleteTask = async (req, res) => {
     }
 
     // Eliminar la tarea
-    await Task.findByIdAndRemove(id);
+    await Task.findByIdAndDelete(id);
 
     res.status(200).json({
       message: "Tarea eliminada exitosamente",
