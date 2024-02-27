@@ -1,6 +1,5 @@
 /** @format */
 
-// contracts/controllers/contractController.js
 const Contract = require("../models/contract");
 
 // Funciones de controlador
@@ -14,16 +13,12 @@ exports.updateContract = async (req, res) => {
       return res.status(404).json({ error: "Contrato no encontrado" });
     }
 
-    // Actualizar el contrato con los datos proporcionados en el cuerpo de la solicitud
-    const updatedContract = await Contract.findByIdAndUpdate(
-      id,
-      { $set: req.body },
-      { new: true }
-    );
+    // Eliminar el contrato
+    const deletedContract = await Contract.findOneAndDelete({ _id: id });
 
     res.status(200).json({
-      message: "Contrato actualizado exitosamente",
-      contract: updatedContract,
+      message: "Contrato eliminado exitosamente",
+      contract: deletedContract,
     });
   } catch (error) {
     console.error(error);
@@ -42,11 +37,11 @@ exports.deleteContract = async (req, res) => {
     }
 
     // Eliminar el contrato
-    await Contract.findByIdAndRemove(id);
+    const deletedContract = await Contract.findOneAndDelete({ _id: id });
 
     res.status(200).json({
       message: "Contrato eliminado exitosamente",
-      contract: existingContract,
+      contract: deletedContract,
     });
   } catch (error) {
     console.error(error);
