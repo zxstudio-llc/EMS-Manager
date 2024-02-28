@@ -8,7 +8,7 @@ const contractController = require("../controllers/contractController");
 // Rutas para contratos
 router.get("/", contractController.getAllContracts);
 router.get("/:id", contractController.getContractById);
-router.post("/create", contractController.createContract);
+router.post("/", contractController.createContract);
 router.put("/:id", contractController.updateContract);
 router.delete("/:id", contractController.updateContract);
 
