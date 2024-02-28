@@ -2,6 +2,8 @@
 
 // clients/controllers/clientController.js
 const Client = require("../models/client");
+const validationUtils = require("../utils/validation");
+
 
 exports.createClient = async (req, res) => {
   try {
