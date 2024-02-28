@@ -14,6 +14,7 @@ const taskRoutes = require("./tasks/routes/taskRoutes");
 const invoiceRoutes = require("./payments/routes/invoiceRoutes");
 const bankStatementRoutes = require("./payments/routes/bankStatementRoutes");
 const transactionRoutes = require("./payments/routes/transactionRoutes");
+const validationUtils = require("./validation");
 
 dotenv.config();
 
@@ -42,7 +43,7 @@ app.use(express.urlencoded({ extended: true }));
 // Configuración de rutas
 console.log("Registrando rutas...");
 app.use("/auth", authRoutes);
-app.use("/clients", clientRoutes);
+app.use("/clients", validationUtils.validateClient, clientRoutes); // Aquí añadimos el middleware de validación
 app.use("/contracts", contractRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/invoices", invoiceRoutes);

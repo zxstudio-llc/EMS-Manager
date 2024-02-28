@@ -2,16 +2,17 @@
 
 // clients/controllers/clientController.js
 const Client = require("../models/client");
-const validationUtils = require("../utils/validation");
+const validationUtils = require("../../validation");
 
 exports.createClient = async (req, res) => {
   try {
-    // Validar los datos del cliente antes de crearlo
-    const { error } = validationUtils.validateClientData(req.body);
-    if (error) {
-      return res.status(400).json({ error: error.details[0].message });
+    // Validar los datos antes de crear el cliente
+    const validationResult = validationUtils.validateClientData(req.body);
+    if (validationResult.error) {
+      return res.status(400).json({ error: validationResult.error.message });
     }
 
+    // Crear el cliente si la validación es exitosa
     const newClient = await Client.create(req.body);
     res.status(201).json(newClient);
   } catch (error) {
@@ -46,13 +47,15 @@ exports.getClientById = async (req, res) => {
 
 exports.updateClient = async (req, res) => {
   try {
-    // Validar los datos del cliente antes de actualizarlo
-    const { error } = validationUtils.validateClientData(req.body);
-    if (error) {
-      return res.status(400).json({ error: error.details[0].message });
+    const { id } = req.params;
+
+    // Validar los datos antes de actualizar el cliente
+    const validationResult = validationUtils.validateClientData(req.body);
+    if (validationResult.error) {
+      return res.status(400).json({ error: validationResult.error.message });
     }
 
-    const { id } = req.params;
+    // Actualizar el cliente si la validación es exitosa
     const updatedClient = await Client.findByIdAndUpdate(id, req.body, {
       new: true,
     });
