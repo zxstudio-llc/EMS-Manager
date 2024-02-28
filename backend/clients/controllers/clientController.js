@@ -4,9 +4,15 @@
 const Client = require("../models/client");
 const validationUtils = require("../utils/validation");
 
-
 exports.createClient = async (req, res) => {
   try {
+    // Validar los datos antes de crear el cliente
+    const validationResult = validationUtils.validateClientData(req.body);
+    if (validationResult.error) {
+      return res.status(400).json({ error: validationResult.error.message });
+    }
+
+    // Crear el cliente si la validación es exitosa
     const newClient = await Client.create(req.body);
     res.status(201).json(newClient);
   } catch (error) {
@@ -42,12 +48,22 @@ exports.getClientById = async (req, res) => {
 exports.updateClient = async (req, res) => {
   try {
     const { id } = req.params;
+
+    // Validar los datos antes de actualizar el cliente
+    const validationResult = validationUtils.validateClientData(req.body);
+    if (validationResult.error) {
+      return res.status(400).json({ error: validationResult.error.message });
+    }
+
+    // Actualizar el cliente si la validación es exitosa
     const updatedClient = await Client.findByIdAndUpdate(id, req.body, {
       new: true,
     });
+
     if (!updatedClient) {
       return res.status(404).json({ error: "Cliente no encontrado" });
     }
+
     res.status(200).json(updatedClient);
   } catch (error) {
     console.error(error);
