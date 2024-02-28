@@ -59,3 +59,88 @@ exports.reconcileStatement = async (req, res) => {
     res.status(500).json({ error: "Error interno del servidor" });
   }
 };
+
+exports.getBankStatementById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const bankStatement = await BankStatement.findById(id);
+    if (!bankStatement) {
+      return res.status(404).json({ error: "Registro bancario no encontrado" });
+    }
+
+    res.status(200).json({ bankStatement });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+};
+
+exports.updateBankStatement = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { description, amount, createdBy } = req.body;
+
+    const updatedBankStatement = await BankStatement.findByIdAndUpdate(
+      id,
+      { description, amount, createdBy },
+      { new: true }
+    );
+
+    if (!updatedBankStatement) {
+      return res.status(404).json({ error: "Registro bancario no encontrado" });
+    }
+
+    res.status(200).json({
+      message: "Registro bancario actualizado exitosamente",
+      bankStatement: updatedBankStatement,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+};
+
+exports.updateBankStatement = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { description, amount, createdBy } = req.body;
+
+    const updatedBankStatement = await BankStatement.findByIdAndUpdate(
+      id,
+      { description, amount, createdBy },
+      { new: true }
+    );
+
+    if (!updatedBankStatement) {
+      return res.status(404).json({ error: "Registro bancario no encontrado" });
+    }
+
+    res.status(200).json({
+      message: "Registro bancario actualizado exitosamente",
+      bankStatement: updatedBankStatement,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+};
+
+exports.deleteBankStatement = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedBankStatement = await BankStatement.findByIdAndDelete(id);
+    if (!deletedBankStatement) {
+      return res.status(404).json({ error: "Registro bancario no encontrado" });
+    }
+
+    res.status(200).json({
+      message: "Registro bancario eliminado exitosamente",
+      bankStatement: deletedBankStatement,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+};

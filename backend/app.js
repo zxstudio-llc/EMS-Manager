@@ -46,7 +46,7 @@ app.use("/clients", clientRoutes);
 app.use("/contracts", contractRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/invoices", invoiceRoutes);
-app.use("/bankStatements", bankStatementRoutes);
+app.use("/bankstatements", bankStatementRoutes);
 app.use("/transactions", transactionRoutes);
 
 // Middleware de autorización
