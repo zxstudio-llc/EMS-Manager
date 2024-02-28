@@ -11,6 +11,9 @@ const authMiddleware = require("./auth/middleware/authMiddleware");
 const clientRoutes = require("./clients/routes/clientRoutes");
 const contractRoutes = require("./contracts/routes/contractRoutes");
 const taskRoutes = require("./tasks/routes/taskRoutes");
+const invoiceRoutes = require("./payments/routes/invoiceRoutes");
+const bankStatementRoutes = require("./payments/routes/bankStatementRoutes");
+const transactionRoutes = require("./payments/routes/transactionRoutes");
 
 dotenv.config();
 
@@ -42,6 +45,9 @@ app.use("/auth", authRoutes);
 app.use("/clients", clientRoutes);
 app.use("/contracts", contractRoutes);
 app.use("/tasks", taskRoutes);
+app.use("/invoices", invoiceRoutes);
+app.use("/bankStatements", bankStatementRoutes);
+app.use("/transactions", transactionRoutes);
 
 // Middleware de autorización
 app.use("/api", authMiddleware);
