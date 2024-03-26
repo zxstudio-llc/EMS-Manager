@@ -1,3 +1,4 @@
+"use cliente";
 import Footer from "";
 import Header from "@/components/Header";
 import Lines from "@/components/Lines";
@@ -5,6 +6,7 @@ import Lines from "@/components/Lines";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+
 
 import ToasterContext from "../context/ToastContext";
 
