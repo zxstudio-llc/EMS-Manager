@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align='center'>
+<img src="./apps/website/public/saasui.svg#gh-light-mode-only" alt="Saas UI logo" height="60px" />
+<img src="./apps/website/public/saasui-dark.svg#gh-dark-mode-only" alt="Saas UI logo" height="60px" />
+</p>
 
-## Getting Started
+<p align='center'>The React component library for Startups</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://www.npmjs.com/package/@saas-ui/react">
+    <img src="https://img.shields.io/npm/v/@saas-ui/react" alt="NPM">
+  </a>
+  <a href="https://www.npmjs.com/package/@saas-ui/react">
+    <img src="https://img.shields.io/npm/dm/@saas-ui/react.svg" alt="npm downloads">
+  </a>
+  <img alt="MIT License" src="https://img.shields.io/github/license/saas-js/saas-ui"/>
+  <a href="https://twitter.com/intent/follow?screen_name=saas_js">
+    <img src="https://img.shields.io/twitter/follow/saas_js" alt="follow on Twitter">
+  </a>
+</p>
+
+<hr />
+
+Saas UI is an advanced component library designed to build beautiful B2B and dashboard style apps with speed.
+It's built on top of Chakra UI and fully written in Typescript.
+
+This repository contains all [open source components](/packages), as well as the [documentation website](apps/website/pages/docs).
+
+## Links
+
+💡 [Documentation](https://saas-ui.dev/docs)
+
+🧭 [Roadmap](https://roadmap.saas-ui.dev)
+
+🖼 [Storybooks](https://storybook.saas-ui.pro)
+
+🌟 [Saas UI Pro](https://saas-ui.dev/#pro-features)
+
+## Sponsors ❤️
+
+Saas UI is sponsored by these amazing companies and people.
+
+- [LocalXPose](https://localxpose.io/)
+
+## Contributing & Support
+
+Want to help? Great! Check out the [contributing guidelines](CONTRIBUTING.md) and feel free to open a PR or [discussion](https://github.com/saas-js/saas-ui/discussions/new) for feature requests and feedback.
+
+If you'd like to support the project financially, you can [become a sponsor](https://github.com/sponsors/saas-js) of Saas UI or consider ordering [Saas UI Pro Beta](https://saas-ui.lemonsqueezy.com/checkout/buy/5c76854f-738a-46b8-b32d-932a97d477f5). All funds will go toward the further development of Saas UI. This will give you access to the private Git repository with the beta and our private Discord server for support.
+
+### Core
+
+40+ essential open-source components built on top of Chakra UI.
+
+- Authentication screens
+- Powerful forms manager
+- DatePicker / DateRangePicker
+- Stepper, Timeline, DataTable and much more.
+
+### Pro
+
+A premium frontend starter pack designed for SaaS products.
+Complete source code available in a monorepo that can serve as a starting point or as a reference for your project.
+
+![theme-tokens](https://user-images.githubusercontent.com/32583/172424112-72bacfdd-17df-4024-81db-690dc47d0c81.png)
+
+- Example Next.js SaaS app (https://demo.saas-ui.dev)
+- Authentication screens (Supabase/Magic/Clerk/Custom)
+- App layout
+- DataGrid and DataBoard (Kanban) with filtering/pagination
+- Charts / Sparklines
+- User account pages
+- Settings pages
+- Feature flags
+- Billing/subscription management (Lemonsqueezy)
+- Mocked API with React Query
+- Custom color schemes
+- Glass theme
+- Onboarding flows
+- Example pages (CRM, Inbox)
+
+## Using this repo
+
+The docs website depends on private packages (`@saas-ui-pro/react`), and won't build fully without access to the private Git submodule.
+
+This repository uses Yarn workspaces, to get started run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Storybook
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn storybook
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Build
 
-## Learn More
+```bash
+yarn build:packages
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Website
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Before running the website you need to build the props-docs by running this.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+yarn build:props-docs
+```
 
-## Deploy on Vercel
+After that run the website with this command.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+yarn w website dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+or
+
+```bash
+cd apps/website && yarn dev
+```
+
+## License
+
+All code in this repository, except for the Saas UI branding assets are licensed under MIT.
