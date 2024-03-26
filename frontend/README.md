@@ -1,125 +1,114 @@
-<p align='center'>
-<img src="./apps/website/public/saasui.svg#gh-light-mode-only" alt="Saas UI logo" height="60px" />
-<img src="./apps/website/public/saasui-dark.svg#gh-dark-mode-only" alt="Saas UI logo" height="60px" />
-</p>
+# TailAdmin Next.js - Free Next.js Tailwind Admin Dashboard Template
 
-<p align='center'>The React component library for Startups</p>
+TailAdmin is a free and open-source admin dashboard template built on **Next.js and Tailwind CSS** providing developers with everything they need to create a feature-rich and data-driven: back-end, dashboard, or admin panel solution for any sort of web project.
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/@saas-ui/react">
-    <img src="https://img.shields.io/npm/v/@saas-ui/react" alt="NPM">
-  </a>
-  <a href="https://www.npmjs.com/package/@saas-ui/react">
-    <img src="https://img.shields.io/npm/dm/@saas-ui/react.svg" alt="npm downloads">
-  </a>
-  <img alt="MIT License" src="https://img.shields.io/github/license/saas-js/saas-ui"/>
-  <a href="https://twitter.com/intent/follow?screen_name=saas_js">
-    <img src="https://img.shields.io/twitter/follow/saas_js" alt="follow on Twitter">
-  </a>
-</p>
+[![tailwind nextjs admin template](https://github.com/TailAdmin/free-nextjs-admin-dashboard/blob/main/tailadmin-nextjs.jpg)](https://nextjs-demo.tailadmin.com/)
 
-<hr />
+With TailAdmin Next.js, you get access to all the necessary dashboard UI components, elements, and pages required to build a high-quality and complete dashboard or admin panel. Whether you're building a dashboard or admin panel for a complex web application or a simple website. 
 
-Saas UI is an advanced component library designed to build beautiful B2B and dashboard style apps with speed.
-It's built on top of Chakra UI and fully written in Typescript.
+TailAdmin utilizes the powerful features of **Next.js 13** and common features of Next.js such as server-side rendering (SSR), static site generation (SSG), and seamless API route integration. Combined with the advancements of **React 18** and the robustness of **TypeScript**, TailAdmin is the perfect solution to help get your project up and running quickly.
 
-This repository contains all [open source components](/packages), as well as the [documentation website](apps/website/pages/docs).
+### [✨ Visit Website](https://tailadmin.com/)
+### [🚀 PRO Demo](https://nextjs-demo.tailadmin.com/)
+### [🚀 FREE Demo](https://nextjs-free-demo.tailadmin.com/)
 
-## Links
+### TailAdmin Next.js PRO vs TailAdmin Next.js FREE Comparison 📊
 
-💡 [Documentation](https://saas-ui.dev/docs)
+#### [TailAdmin Next.js PRO](https://nextjs-demo.tailadmin.com/)
+- 4 Unique Dashboards: Analytics, Ecommerce, Marketing, and CRM (More will be added)
+- 120+ Dashboard UI Components
+- 200+ Total UI Elements
+- 45+ HTML Files
+- All Essential Elements and Files
+- Full Figma Design Source - As Shown on Demo
+___
 
-🧭 [Roadmap](https://roadmap.saas-ui.dev)
+#### [TailAdmin Next.js FREE](https://free-nextjs-demo.tailadmin.com/)
+- 1 Unique Dashboard
+- 30+ Dashboard UI Components
+- 50+ Total UI Elements 
+- 10+ HTML Files
+- TypeScript Support
+- Basic UI Kit Elements and Files
+- Figma Design Source - Free Sample
+___
 
-🖼 [Storybooks](https://storybook.saas-ui.pro)
+### [⬇️ Download Now](https://tailadmin.com/download)
 
-🌟 [Saas UI Pro](https://saas-ui.dev/#pro-features)
+### [⚡ Get PRO Version](https://tailadmin.com/pricing)
 
-## Sponsors ❤️
+### [📄 Documentation/Installation](https://tailadmin.com/docs)
 
-Saas UI is sponsored by these amazing companies and people.
+### [🖌️ TailAdmin Figma Free Sample](https://www.figma.com/community/file/1214477970819985778)
 
-- [LocalXPose](https://localxpose.io/)
+### [👉 TailAdmin HTML Version](https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template)
 
-## Contributing & Support
 
-Want to help? Great! Check out the [contributing guidelines](CONTRIBUTING.md) and feel free to open a PR or [discussion](https://github.com/saas-js/saas-ui/discussions/new) for feature requests and feedback.
+## Installation
+Here are the steps you need to follow to install the dependencies.
 
-If you'd like to support the project financially, you can [become a sponsor](https://github.com/sponsors/saas-js) of Saas UI or consider ordering [Saas UI Pro Beta](https://saas-ui.lemonsqueezy.com/checkout/buy/5c76854f-738a-46b8-b32d-932a97d477f5). All funds will go toward the further development of Saas UI. This will give you access to the private Git repository with the beta and our private Discord server for support.
+1. Download and extract the template from Next.js Templates.
 
-### Core
+2. After that **cd** into the template directory then run this command to install all the dependencies
 
-40+ essential open-source components built on top of Chakra UI.
-
-- Authentication screens
-- Powerful forms manager
-- DatePicker / DateRangePicker
-- Stepper, Timeline, DataTable and much more.
-
-### Pro
-
-A premium frontend starter pack designed for SaaS products.
-Complete source code available in a monorepo that can serve as a starting point or as a reference for your project.
-
-![theme-tokens](https://user-images.githubusercontent.com/32583/172424112-72bacfdd-17df-4024-81db-690dc47d0c81.png)
-
-- Example Next.js SaaS app (https://demo.saas-ui.dev)
-- Authentication screens (Supabase/Magic/Clerk/Custom)
-- App layout
-- DataGrid and DataBoard (Kanban) with filtering/pagination
-- Charts / Sparklines
-- User account pages
-- Settings pages
-- Feature flags
-- Billing/subscription management (Lemonsqueezy)
-- Mocked API with React Query
-- Custom color schemes
-- Glass theme
-- Onboarding flows
-- Example pages (CRM, Inbox)
-
-## Using this repo
-
-The docs website depends on private packages (`@saas-ui-pro/react`), and won't build fully without access to the private Git submodule.
-
-This repository uses Yarn workspaces, to get started run:
-
-```bash
-yarn
 ```
-
-### Storybook
-
-```bash
-yarn storybook
+npm install
 ```
-
-### Build
-
-```bash
-yarn build:packages
-```
-
-### Website
-
-Before running the website you need to build the props-docs by running this.
-
-```bash
-yarn build:props-docs
-```
-
-After that run the website with this command.
-
-```bash
-yarn w website dev
-```
-
 or
 
-```bash
-cd apps/website && yarn dev
+```
+yarn install
 ```
 
-## License
+3. Now run this command to start the developement server
 
-All code in this repository, except for the Saas UI branding assets are licensed under MIT.
+```
+npm run dev
+```
+
+or 
+
+```
+yarn dev
+```
+
+
+## Free Admin Dashboard Template for Next.js Built-with Tailwind CSS, React 18 and TypeScript
+TailAdmin Next.js is a free dashboard template, which uses Tailwind CSS, is a great starting point for dashboard UI. This template uses the Next.js JavaScript framework and the easy-to-use Tailwind CSS framework. The Tailwind CSS and Next.js Dashboard Template comes with ready-made components like navigation menus, charts, tables, and forms. These components can be easily adjusted and added to any Next.js web application.
+
+TailAdmin for Next.js provides all essential Next.js + Tailwind CSS UI components that can be copied and pasted directly into your dashboard projects. The range of components includes charts, graphs, navbars, tabs, buttons, cards, tables, profiles, forms, modals, app pages, calendars, web app example templates, and more, all coded for Next.js React and styled using Tailwind CSS.
+
+If you're on the hunt for a top-quality Next.js-Tailwind Dashboard, Admin Panel Template, or UI Kit, TailAdmin is the perfect choice for you!
+
+### 📄 License
+TailAdmin Next.js Free is 100% free and open-source; feel free to use it with your personal and commercial projects.
+
+### 💜 Support
+If you like the template, please star this repository to inspire the team to create more stuff like this and reach more users like you!
+
+
+## Update Logs
+
+### Version 1.3.1 - [Feb 12, 2024]
+
+#### Issues
+
+- **Issues 02:** Fix Misspelling issue [Default Layout/Layouts].
+
+#### Enhancements
+- **Enhancement 01:** Update style.css
+
+### Version 1.3.0 - [Feb 05, 2024]
+
+#### Enhancements
+
+- **Enhancement 01:** Update Next.js into version 14
+- **Enhancement 02:** Integrate flatpickr in [Date Picker/Form Elements]
+- **Enhancement 03:** Change color after select an option [Select Element/Form Elements].
+- **Enhancement 04:** Make it functional [Multiselect Dropdown/Form Elements].
+- **Enhancement 05:** Make best value editable [Pricing Table One/Pricing Table].
+- **Enhancement 06:** Add Default Layout Component and make App/Layout more clean and use it in every pages.
+
+### Version 0.1.0 - Initial Release - [Aug 3, 2023]
+
+- Initial release of TailAdmin Next.
