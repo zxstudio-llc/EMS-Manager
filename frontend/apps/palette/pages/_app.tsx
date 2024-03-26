@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         theme: 'Saas UI',
       }}
     >
-      <ThemeProvider children={undefined}>
+      <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
     </PaletteProvider>
